@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        };
 
-    String baseUrl = "http://10.0.2.2:5656/users";
     RequestQueue requestQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,25 +93,7 @@ public class MainActivity extends AppCompatActivity {
         getCallDetails();
 
 
-//        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
-//                (Request.Method.POST, baseUrl, null, new Response.Listener<JSONArray>() {
-//
-//                    @Override
-//                    public void onResponse(JSONArray response) {
-//
-//                        textView.setText("Response: " + response.toString());
-//                    }
-//                }, new Response.ErrorListener() {
-//
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        textView.setText("Error: " + error.toString());
-//
-//                    }
-//                });
-//
-//
-//        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
+
 
 
 
