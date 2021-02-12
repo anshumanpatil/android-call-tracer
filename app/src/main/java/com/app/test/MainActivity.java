@@ -49,15 +49,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
-    // Add this inside your class
-    BroadcastReceiver broadcastReceiver =  new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Bundle b = intent.getExtras();
-            String message = b.getString("message");
-            System.out.println("newmesage " +  message);
-        }
-    };
+    // Anshu1506 code for not restart activity
+//        BroadcastReceiver broadcastReceiver =  new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                Bundle b = intent.getExtras();
+//                String message = b.getString("message");
+//                System.out.println("newmesage " +  message);
+//            }
+//        };
 
     String baseUrl = "http://10.0.2.2:5656/users";
     RequestQueue requestQueue;
@@ -78,12 +78,21 @@ public class MainActivity extends AppCompatActivity {
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }
-        registerReceiver(broadcastReceiver, new IntentFilter("broadCastName"));
+        // Anshu1506 code for not restart activity
+//                registerReceiver(broadcastReceiver, new IntentFilter("broadCastName"));
+//
+//
+//
+//        Intent intent = getIntent();
+//        String message = intent.getStringExtra("message");
+//        System.out.println("newmesage --" +  message);
+
 
         textView = findViewById(R.id.textView);
         textView.setMovementMethod(new ScrollingMovementMethod());
         requestQueue = Volley.newRequestQueue(this);
         getCallDetails();
+
 
 //        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
 //                (Request.Method.POST, baseUrl, null, new Response.Listener<JSONArray>() {
